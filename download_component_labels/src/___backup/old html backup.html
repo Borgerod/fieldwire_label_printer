@@ -1,0 +1,96 @@
+
+
+// OLD HTML BACKUP
+
+<splitscreen>
+<div class = "rightside">
+  <div class="App-header">
+    <h4>Component Label</h4>
+  </div>
+
+             
+  
+  <div class="container">
+
+  
+    {/* SELECT PRIJECT */}
+    <div class="row">
+        <h4>Select Project</h4>
+
+        <select onChange={e => setSelectedProjectId(e.target.value)} value={selectedProjectId}>
+            <option value="">Select a project</option>
+            {projects.map(project => (
+                <option key={project.id} value={project.id}>
+                    {project.name}
+                </option>
+            ))}
+        </select>
+
+    </div>
+
+
+
+  {/* CHECK BOXES */}
+  {/* <div class="row"> */}
+    <div>
+        <h4>Select Fields to Include</h4>
+        {Object.keys(fields).map(field => (
+            <div key={field}>
+                <input
+                    type="checkbox"
+                    checked={fields[field]}
+                    onChange={() => handleFieldToggle(field)}
+                />
+                <label>{field}</label>
+            </div>
+        ))}
+    </div>
+
+  {/* SORT BY */}
+  <div class="row">
+        <h4>Sort CSV columns</h4>
+        <select onChange={e => handleSortChange(e.target.value)} value={sortField}>
+            <option value="">No sorting</option>
+            {Object.keys(fields).map(field => (
+                <option key={field} value={field}>
+                    {field}
+                </option>
+            ))}
+        </select>
+    </div>
+
+  </div>
+</div>
+<div class="leftside">
+
+    
+
+
+    {/* <div>
+        <button onClick={fetchDevicesAndSaveCSV}>Save to CSV</button>
+    </div> */}
+    <div>
+      <div>
+        <h2>Preview</h2>
+      </div>
+        <div class="preview_container">
+          <pre>{JSON.stringify(devices, null, 2)}</pre>
+        </div>
+    
+    </div>            
+    
+
+    <div class="buttonContainer">
+    <Button
+    
+      onClick={fetchDevicesAndSaveCSV}
+      variant="contained"
+      startIcon={<DownloadIcon />}
+    >
+      Download CSV
+    </Button>
+  </div>
+
+
+</div>
+</splitscreen>

@@ -1,0 +1,135 @@
+/* 
+TODO: changes all <self-defined-tags> into classes and in the HTML change the tags into <div className=self-defined-tag>
+*Sounds like a perfect ChatGPT-job
+apparently you cannot define your own <tags> normally in react. 
+It doesn't create any problems (so far) but it should probably be fixed.
+*/
+
+App {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: row;
+}
+
+.splitscreen {
+  display: flex;
+  flex-direction: row;
+}
+
+.rightside {
+  padding: 1rem;
+  width: 30%;
+  background-color: #F5F5F5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.leftside {
+  width: 70%;
+}
+
+
+select {
+  color: #808080;
+  height: 40px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid;
+}
+
+container {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex-grow: 1;
+}
+
+container.preview {
+  overflow: auto;
+  line-height: 1.5rem;
+  color:#4ef197;
+  min-height: 8.3rem;
+  min-width: 200px;
+  padding: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 10px;
+  background-color: #1f2020;
+}
+
+container.button {
+  align-items: center;
+  justify-content: center;
+}  
+
+
+container.checkbox-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid;
+}
+
+
+row {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+row.item.big {
+  width: 50%;
+  padding: 0rem;
+}
+
+row.item.small {
+  padding: 0rem;
+  width: 20%;
+}
+
+
+row.header{
+  padding: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+}
+
+
+row.checkbox {
+  overflow: visible;
+  display: flex;
+  width: 35%;
+  padding: 0;
+  padding-left: 1rem;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+
+select {
+  background-color: transparent;
+  height: 40px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid;
+  border-color: #808080;
+}
+
+
+input {
+  accent-color: #35a869;
+}
+
+stack{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
