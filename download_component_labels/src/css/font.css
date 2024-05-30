@@ -1,20 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
-* {
-    font-family: "Inter", sans-serif;
+@import url('theme.css');
+
+* { 
+    /* Default value */
+    font-family: var( --default-font);
     font-size: 12px;
     font-weight: 300;
+    font-weight: var(--default-font-weight);
+    font-size: var(--default-font-size);
+    color: var(--primary-color);
+    /* NOTE (WORKAROUND FOUND) setting default color fucks up; buttonicon, closeicon, and preview display text */
 }
 
-body {
-    font-size: 12px;
-    font-weight: 300;
-    color: #808080
-}
 
-h1 {
+/* Not in use */
+h1 {/* Designated logo font */
+    font-family: var(--logo-font);
     font-size: 14px;
-    color: #808080
 }
 
 h2 {
@@ -22,15 +24,18 @@ h2 {
     display: flex;
     align-items: end;
     margin: 0px;
-    font-weight: 300;
+
+    font-weight: var(--default-font-weight);
     font-size: 14px;
 }
 
 h2.dark{
-    color: #5c5c5c
+    color: var(--secondary-color);
 }
 
 h3 {
     font-size: 16px;
-    color: #ffffff
+    color: var(--button-color);
+    font-weight: var(--h3-font-weight);
 }
+
