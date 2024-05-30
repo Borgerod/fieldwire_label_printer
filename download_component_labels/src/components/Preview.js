@@ -12,14 +12,14 @@ const generateCSVPreview = (devices, sortField, fields) => {
 
 const Preview = ({ devices, sortField, fields }) => {
   return (
-    <container>
-      <row className="header">
+    <div className="container">
+      <div className="row header">
         <h2 className="dark">Preview</h2>
-      </row>
-      <container className="preview">
+      </div>
+      <div className="container preview">
         <pre>{generateCSVPreview(devices, sortField, fields)}</pre>
-      </container>
-    </container>
+      </div>
+    </div>
   );
 };
 

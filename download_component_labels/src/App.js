@@ -13,7 +13,6 @@ import { fetchProjects, fetchDevices } from './utils/api';
 
 const App = () => {
   const [projects, setProjects] = useState([]);
-  const [selectedProjectId, setSelectedProjectId] = useState("");
   const [devices, setDevices] = useState([]);
   const [fields, setFields] = useState({
     sequence_number: true,
@@ -21,7 +20,10 @@ const App = () => {
     device_type: true,
     team_handle: true
   });
+
+  const [selectedProjectId, setSelectedProjectId] = useState("");
   const [sortField, setSortField] = useState(null);
+
 
   useEffect(() => {
     fetchProjects(setProjects);
@@ -42,7 +44,7 @@ const App = () => {
   };
 
   return (
-    <div className='splitscreen'>
+    <div className='App'>
       <div className="leftside">
         <ProjectSelection projects={projects} setSelectedProjectId={setSelectedProjectId} selectedProjectId={selectedProjectId} />
         <FieldSelection fields={fields} handleFieldToggle={handleFieldToggle} />
@@ -55,7 +57,7 @@ const App = () => {
         <DownloadButton selectedProjectId={selectedProjectId} sortField={sortField} fields={fields} devices={devices} />
       </div>
       <CloseIconComponent />
-    </div>
+      </div>
   );
 };
 

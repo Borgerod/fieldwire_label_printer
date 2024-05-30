@@ -8,11 +8,11 @@ const SortSelection = ({ fields, handleSortChange, sortField }) => {
   }
 
   return (
-    <row>
-      <row className="item small">
+    <div className="row">
+      <div className="row item small">
         <h2>Sort by</h2>
-      </row>
-      <row className="item big">
+      </div>
+      <div className="row item big">
         <select onChange={e => handleSortChange(e.target.value)} value={sortField}>
           <option value={`undefined`}>No Sorting</option>
           {Object.keys(fields).map(field => (
@@ -21,8 +21,8 @@ const SortSelection = ({ fields, handleSortChange, sortField }) => {
             </option>
           ))}
         </select>
-      </row>
-    </row>
+      </div>
+    </div>
   );
 };
 

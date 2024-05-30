@@ -2,25 +2,30 @@ import React from 'react';
 
 const FieldSelection = ({ fields, handleFieldToggle }) => {
   return (
-    <row>
-      <row className="item small">
+    <div className="row">
+      <div className="row item small">
         <h2>Select Fields to Include</h2>
-      </row>
-      <row className="item big">
-        <container className="checkbox-list">
+      </div>
+      <div className="row item big">
+        <div className="container checkbox-list">
           {Object.keys(fields).map(field => (
-            <row className="checkbox" key={field}>
+            <div className="row checkbox" key={field}>
               <input
+              style={{
+                // caretColor:"#ffff",
+                // 'caret-color' : '#ffff',
+                
+              }}
                 type="checkbox"
                 checked={fields[field]}
                 onChange={() => handleFieldToggle(field)}
               />
               <label>{field}</label>
-            </row>
+            </div>
           ))}
-        </container>
-      </row>
-    </row>
+        </div>
+      </div>
+    </div>
   );
 };
 

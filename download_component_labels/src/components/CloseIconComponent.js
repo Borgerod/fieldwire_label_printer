@@ -3,9 +3,9 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const CloseIconComponent = () => {
   return (
-    <stack>
+    <div className='stack'>
       <CloseIcon />
-    </stack>
+    </div>
   );
 };
 

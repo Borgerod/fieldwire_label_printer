@@ -1,12 +1,15 @@
 import React from 'react';
-import { Button } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
 import { fetchDevicesAndSaveCSV } from '../utils/api';
-
-const DownloadButton = ({ selectedProjectId, sortField, fields, devices}) => {
+import '../css/App.css';
+// import { Button } from "@mui/material"; //!dont remove untill the new doanload button is tested
+const DownloadButton = ({ selectedProjectId, sortField, fields, devices }) => {
     return (
-        <container className="button">
-            <Button
+        <div className="container button">
+            
+            
+            {/* <Button
+                //! Keep this incase the new DOWNLOAD CSV button doesn't work 
                 style={{
                     backgroundColor: "#35a869"
                 }}
@@ -16,8 +19,21 @@ const DownloadButton = ({ selectedProjectId, sortField, fields, devices}) => {
                 startIcon={<DownloadIcon />}
             >
                 Download CSV
-            </Button>
-        </container>
+            </Button> */}
+
+
+            <button
+                className="download"
+                onClick={() => fetchDevicesAndSaveCSV(
+                    selectedProjectId,
+                    sortField,
+                    fields,
+                    devices
+                )}>
+                <DownloadIcon />
+                DOWNLOAD CSV
+            </button>
+        </div>
     );
 };
 
