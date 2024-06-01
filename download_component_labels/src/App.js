@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+
+import { sortDevices } from './utils/sortUtils';
 import { fetchProjects, fetchDevices } from './utils/api';
 import CloseIconComponent from './components/CloseIconComponent';
 import ProjectSelection from './components/ProjectSelection';
@@ -6,7 +8,6 @@ import DownloadButton from './components/DownloadButton';
 import FieldSelection from './components/FieldSelection';
 import SortSelection from './components/SortSelection';
 import Preview from './components/Preview';
-import { sortDevices } from './utils/sortUtils';
 
 import './css/font.css';
 import './css/App.css';
@@ -56,7 +57,7 @@ const App = () => {
 
       <div className="rightside">
         <Preview devices={devices} sortField={sortField} fields={fields} />
-        <DownloadButton selectedProjectId={selectedProjectId} sortField={sortField} fields={fields} devices={devices} />
+        <DownloadButton fields={fields} devices={devices} />
       </div>
       
       <CloseIconComponent />
