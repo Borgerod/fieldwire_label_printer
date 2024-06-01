@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import './css/App.css';
-import './css/font.css';
+import { fetchProjects, fetchDevices } from './utils/api';
+import CloseIconComponent from './components/CloseIconComponent';
 import ProjectSelection from './components/ProjectSelection';
+import DownloadButton from './components/DownloadButton';
 import FieldSelection from './components/FieldSelection';
 import SortSelection from './components/SortSelection';
 import Preview from './components/Preview';
-import DownloadButton from './components/DownloadButton';
-import CloseIconComponent from './components/CloseIconComponent';
-import { fetchProjects, fetchDevices } from './utils/api';
-//! sortDevices() gets called too many times, especially in api.js.
-//TODO  call sortDevices() here and make it do the sorting once every time "sort by" is changed. 
+import { sortDevices } from './utils/sortUtils';
+
+import './css/font.css';
+import './css/App.css';
 
 const App = () => {
   const [projects, setProjects] = useState([]);
@@ -24,14 +24,13 @@ const App = () => {
   const [selectedProjectId, setSelectedProjectId] = useState("");
   const [sortField, setSortField] = useState(null);
 
-
   useEffect(() => {
     fetchProjects(setProjects);
   }, []);
 
   useEffect(() => {
     if (selectedProjectId) {
-      fetchDevices(selectedProjectId, setDevices, sortField);
+      fetchDevices(selectedProjectId, setDevices);
     }
   }, [selectedProjectId, sortField]);
 
@@ -39,23 +38,27 @@ const App = () => {
     setFields({ ...fields, [field]: !fields[field] });
   };
 
-  const handleSortChange = (field) => {
-    setSortField(field);
+  const handleSortChange = (sortField) => {
+    setSortField(sortField);
+    if (sortField) {
+      const devicesData = sortDevices(devices, sortField);
+      setDevices(devicesData);
+    }
   };
 
-  return (
+   return (
     <div className='App'>
       <div className="leftside">
         <ProjectSelection projects={projects} setSelectedProjectId={setSelectedProjectId} selectedProjectId={selectedProjectId} />
         <FieldSelection fields={fields} handleFieldToggle={handleFieldToggle} />
         <SortSelection fields={fields} handleSortChange={handleSortChange} sortField={sortField} />
       </div>
-      <div className="rightside">
-        {/* <Preview generateCSVPreview={generateCSVPreview} /> */}
-        <Preview devices={devices} sortField={sortField} fields={fields} />
 
+      <div className="rightside">
+        <Preview devices={devices} sortField={sortField} fields={fields} />
         <DownloadButton selectedProjectId={selectedProjectId} sortField={sortField} fields={fields} devices={devices} />
       </div>
+      
       <CloseIconComponent />
       </div>
   );
