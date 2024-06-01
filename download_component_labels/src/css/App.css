@@ -31,6 +31,9 @@ select {
   border-color: var(--secondary-color);
   color: var(--secondary-color);
 }
+.select:hover {
+  filter: brightness(150%);
+}
 
 .container {
   overflow: auto;
@@ -53,8 +56,10 @@ select {
   border-radius: 0.5rem;
 }
 
-pre {
-  color: var(--accent-color);
+.container.checkbox-list {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid;
+  column-gap: 2rem;
 }
 
 .container.button {
@@ -62,9 +67,6 @@ pre {
   justify-content: center;
 }
 
-.row.item.big.select:hover {
-  filter: brightness(150%);
-}
 
 button.download {
   background-color: var(--accent-color);
@@ -84,15 +86,56 @@ button.download:hover {
   background-color: var(--accent-color-light);
 }
 
-div.stack {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
+pre {
+  color: var(--accent-color);
 }
 
+.row {
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;  
+}
+
+.row.header {
+  padding: .5rem 1rem 0 1rem;
+}
+
+.row.item.small {
+  padding: 0rem;
+  width: 20%;
+}
+
+.row.item.big {
+  width: 50%;
+  padding: 0rem;
+}
+
+.row.checkbox {
+  column-gap: 1rem;
+  padding-left: 1rem;  
+  padding: 0;
+  width: 35%;
+  justify-content: flex-start;
+  align-items: center;
+  }
+
+input[type="checkbox"] {
+  accent-color: var(--accent-color-dark);
+}
+
+
+/* Close icon */
+div.stack {
+  position: absolute;
+  top: .7rem;
+  right: 1rem;
+}
 div.stack:hover {
   filter: brightness(150%);
 }
+
+
 
 /* VV since default color was cahnged in *{}, I had to specifically change these back to their intended colors VV */
 /* Close icon */
@@ -110,96 +153,5 @@ path[d="M5 20h14v-2H5zM19 9h-4V3H9v6H5l7 7z"] {
   font-size: 1.27rem !important;
   padding: 0rem .75rem 0.15rem 0rem !important;
 } */
-
-
-
-
-
-/* ____________________________CHECKBOX LAND _______________________________ */
-
-
-/* HEADER */
-
-.row.item.small {
-  padding: 0rem;
-  width: 20%;
-}
-
-.row.header {
-  padding: 0;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 1rem;
-}
-
-
-
-
-/* PARENT */
-
-.row {
-  padding: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  /* column-gap: 3rem;
-  row-gap: 3rem;
-  columns:2 ; */
-  
-}
-
-
-.row.item.big {
-  width: 50%;
-  padding: 0rem;
-  /* overflow: visible; */
-  /* flex-direction: column;
-  columns: 2; */
-}
-.container.checkbox-list {
-
-  /* display: flex; */
-  /* overflow: visible; */
-  /* column-gap: 40px; */
-  /* flex-direction: row; */
-
-
-  /* flex-wrap: wrap; */
-  /* justify-content: flex-end; */
-  /* padding-top: 1rem; */
-
-  padding-bottom: 1rem;
-  border-bottom: 1px solid;
-  column-gap: 2rem;
-}
-.row.checkbox {
-  /* flex-direction: column; */
-  /* columns: 2; */
-  /* margin-left: 1rem; */
-  /* overflow: visible; */
-  /* display: flex; */
-  /* flex-direction: row-reverse; */
-  /* row-gap: 1rem; */
-  /* column-gap: .5rem; */
-  /* row-gap: 3rem; */
-  /* margin-left: .1rem; */
-  /* margin-right: .3rem; */
-  
-  column-gap: 1rem;
-  padding-left: 1rem;  
-  padding: 0;
-  width: 35%;
-  justify-content: flex-start;
-  align-items: center;
-
-  }
-
-input[type="checkbox"] {
-  accent-color: var(--accent-color-dark);
-
-}
-
-/* CHILD */
-
 
 
