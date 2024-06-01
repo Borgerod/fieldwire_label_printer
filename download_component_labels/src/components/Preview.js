@@ -1,12 +1,8 @@
 import React from 'react';
-import { sortDevices } from '../utils/sortUtils';
 import { convertToCSV } from '../utils/csvUtils';
 
 const generateCSVPreview = (devices, sortField, fields) => {
   let devicesData = [...devices];
-  if (sortField) {
-    devicesData = sortDevices(devicesData, sortField);
-  }
   return convertToCSV(devicesData, fields).split('\n').slice(0, 5).join('\n') + "\n.  .  .";
 };
 

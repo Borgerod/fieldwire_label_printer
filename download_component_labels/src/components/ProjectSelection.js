@@ -6,7 +6,7 @@ const ProjectSelection = ({ projects, setSelectedProjectId, selectedProjectId })
       <div className="row item small">
         <h2>Select Project</h2>
       </div>
-      <div className="row item big">
+      <div className="row item big select">
         <select onChange={e => setSelectedProjectId(e.target.value)} value={selectedProjectId}>
           <option value=""></option>
           {projects.map(project => (

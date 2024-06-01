@@ -11,11 +11,6 @@ const FieldSelection = ({ fields, handleFieldToggle }) => {
           {Object.keys(fields).map(field => (
             <div className="row checkbox" key={field}>
               <input
-              style={{
-                // caretColor:"#ffff",
-                // 'caret-color' : '#ffff',
-                
-              }}
                 type="checkbox"
                 checked={fields[field]}
                 onChange={() => handleFieldToggle(field)}

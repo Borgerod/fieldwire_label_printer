@@ -25,10 +25,7 @@ const DownloadButton = ({ selectedProjectId, sortField, fields, devices }) => {
             <button
                 className="download"
                 onClick={() => fetchDevicesAndSaveCSV(
-                    selectedProjectId,
-                    sortField,
-                    fields,
-                    devices
+                    fields, devices
                 )}>
                 <DownloadIcon />
                 DOWNLOAD CSV
