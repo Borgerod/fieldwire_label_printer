@@ -21,5 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-src\___backup
-
+api_token.py
+_backups/
+_env/
+test.py
