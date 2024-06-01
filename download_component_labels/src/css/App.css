@@ -1,19 +1,25 @@
+:root{
+  /* Just to show whats not part of the app / or black represents the parent app*/
+  background-color: black; 
+}
+
 .App {
   display: flex;
-  flex-direction: row;
 }
 
 .rightside {
-  padding: 1rem;
+  border-radius: 0 0 .5rem 0;
   width: 30%;
   background-color: var(--secondary-background-color);
+  padding: 1rem 1rem .5rem 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .leftside {
+  border-radius: 0 0 .0 .5rem;
   width: 70%;
+  background-color: var(--primary-background-color);
 }
 
 select {
