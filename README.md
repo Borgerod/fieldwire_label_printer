@@ -60,11 +60,18 @@
 
 
 ## Previews
+upon opening
+![Screenshot 2024-06-01 145234](https://github.com/Borgerod/fieldwire_label_printer/assets/97392841/51fbff12-29b6-4eef-87a6-236bea8ed00c)
+upon usage
+![Screenshot 2024-06-01 145221](https://github.com/Borgerod/fieldwire_label_printer/assets/97392841/2e393f26-a67c-440f-a5d9-1f164d2ae6ef)
 
+### Alternativ Figma designs
 
-### Other designs ideas
+Based on Parent apps Design
+![Screenshot 2024-06-01 135111](https://github.com/Borgerod/fieldwire_label_printer/assets/97392841/e16732db-e451-4ddb-a487-3ed3390a7d5f)
 
-
+Compact version
+![Screenshot 2024-06-01 145417](https://github.com/Borgerod/fieldwire_label_printer/assets/97392841/af975fbc-6860-4817-9934-63f429f6823c)
 
 
 ## Disclaimer
