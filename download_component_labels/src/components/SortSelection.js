@@ -1,5 +1,6 @@
 import React from 'react';
 
+// TODO: make custom dropdown
 
 const SortSelection = ({ fields, handleSortChange, sortField }) => {
 
@@ -8,11 +9,8 @@ const SortSelection = ({ fields, handleSortChange, sortField }) => {
   }
 
   return (
-    <div className="row">
-      <div className="row item small">
-        <h2>Sort by</h2>
-      </div>
-      <div className="row item big select">
+
+      <div className="col_item mid">
         <select onChange={e => handleSortChange(e.target.value)} value={sortField}>
           <option value={`undefined`}>No Sorting</option>
           {Object.keys(fields).map(field => (
@@ -22,7 +20,7 @@ const SortSelection = ({ fields, handleSortChange, sortField }) => {
           ))}
         </select>
       </div>
-    </div>
+
   );
 };
 

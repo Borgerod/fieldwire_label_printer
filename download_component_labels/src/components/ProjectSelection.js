@@ -1,23 +1,21 @@
 import React from 'react';
 
+// TODO: make custom dropdown
 const ProjectSelection = ({ projects, setSelectedProjectId, selectedProjectId }) => {
   return (
-    <div className="row">
-      <div className="row item small">
-        <h2>Select Project</h2>
-      </div>
-      <div className="row item big select">
+    <div className="col_item mid">
         <select onChange={e => setSelectedProjectId(e.target.value)} value={selectedProjectId}>
-          <option value=""></option>
+          <option value={`undefined`}>No selection</option>
           {projects.map(project => (
             <option key={project.id} value={project.id}>
               {project.name}
             </option>
           ))}
         </select>
-      </div>
     </div>
   );
 };
 
+
 export default ProjectSelection;
+

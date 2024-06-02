@@ -1,20 +1,15 @@
 import React from 'react';
 import { convertToCSV } from '../utils/csvUtils';
 
-const generateCSVPreview = (devices, sortField, fields) => {
+const generateCSVPreview = (devices, fields) => {
   let devicesData = [...devices];
-  return convertToCSV(devicesData, fields).split('\n').slice(0, 5).join('\n') + "\n.  .  .";
+  return convertToCSV(devicesData, fields).split('\n').slice(0, 3).join('\n') + "\n.  .  .";
 };
 
-const Preview = ({ devices, sortField, fields }) => {
+const Preview = ({ devices, fields }) => {
   return (
-    <div className="container">
-      <div className="row header">
-        <h2 className="dark">Preview</h2>
-      </div>
-      <div className="container preview">
-        <pre>{generateCSVPreview(devices, sortField, fields)}</pre>
-      </div>
+    <div className="col_item right preview">
+        <pre>{generateCSVPreview(devices,fields)}</pre>
     </div>
   );
 };
