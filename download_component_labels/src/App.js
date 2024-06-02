@@ -11,6 +11,7 @@ import Preview from './components/Preview';
 
 import './css/font.css';
 import './css/App.css';
+import './css/field_selection.css';
 
 const App = () => {
   const [projects, setProjects] = useState([]);
@@ -49,18 +50,26 @@ const App = () => {
 
    return (
     <div className='App'>
-      <div className="leftside">
+
+      <div className="col left">
+      <div className="col_item left"><h2>Select Project</h2></div>
+        <div className="col_item left"><h2>Select Fields</h2></div>
+        <div className="col_item left"><h2>Sort By</h2></div>
+      </div>
+
+      <div className='col mid'>
         <ProjectSelection projects={projects} setSelectedProjectId={setSelectedProjectId} selectedProjectId={selectedProjectId} />
         <FieldSelection fields={fields} handleFieldToggle={handleFieldToggle} />
         <SortSelection fields={fields} handleSortChange={handleSortChange} sortField={sortField} />
       </div>
 
-      <div className="rightside">
-        <Preview devices={devices} sortField={sortField} fields={fields} />
+      <div className="col right">
+      <div className="col_item right header"><h2>Preview</h2></div>
+        <Preview devices={devices} fields={fields} />
         <DownloadButton fields={fields} devices={devices} />
       </div>
       
-      <CloseIconComponent />
+      <CloseIconComponent /> {/* independent Stack */}
       </div>
   );
 };
