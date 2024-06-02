@@ -1,0 +1,36 @@
+.col_item.mid.checklist_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-start;
+    /* vv comment this if select fields align to right vv */
+    /* justify-content: flex-end; */
+  }
+
+  .col_item.mid.checklist {
+    border-bottom-style: none;
+    column-count: 2;
+    column-gap: 3rem;
+    width: 230px;
+    padding: 0 0 .7rem 0;
+  }
+  
+  @media only screen and (max-width: 730px) {
+    .col_item.mid.checklist {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      min-width: 130px;
+    }
+  }
+  
+  p {
+    width: 6rem;
+    margin-block-start: 0rem;
+    margin-block-end: 0rem;
+    margin-inline-start: 1rem;
+  }
+  
+span{
+  text-align: end;
+}
