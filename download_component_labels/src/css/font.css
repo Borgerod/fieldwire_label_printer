@@ -7,24 +7,20 @@
     font-weight: var(--default-font-weight);
     font-size: var(--default-font-size);
     color: var(--primary-color);
-    /* NOTE (WORKAROUND FOUND) setting default color fucks up; buttonicon, closeicon, and preview display text */
 }
-
 
 /* Not in use */
 h1 {/* Designated logo font */
     font-family: var(--logo-font);
-    font-size: 14px;
+    font-size: var(--h1-font-size);
+    font-weight: var(--h1-font-weight);
 }
 
 h2 {
-    height: 100%;
-    display: flex;
-    align-items: end;
-    margin: 0px;
-
+    font-size: var(--h2-font-size);
     font-weight: var(--default-font-weight);
-    font-size: 14px;
+    
+    margin: 0px;
 }
 
 h2.dark{
@@ -32,8 +28,9 @@ h2.dark{
 }
 
 h3 {
-    font-size: 16px;
     color: var(--button-color);
+    font-size: var(--h3-font-size);
     font-weight: var(--h3-font-weight);
 }
+
 
