@@ -5,9 +5,191 @@
 
 .App {
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-.rightside {
+.col {
+  padding: 1rem;
+  padding: 1rem 2rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.col_item {
+  flex-direction: row;
+}
+  
+select {
+  background-color: transparent;
+  height: 3.4rem;
+  width: 100%;
+  border: none;
+}
+
+select:hover {
+  filter: brightness(150%);
+}
+/* TODO: remove border after select (OR make custom dropdown) */
+
+.close_icon{
+  position: absolute;
+  top: .7rem;
+  right: 1rem;
+}
+.close_icon:hover{
+  filter: brightness(150%);
+}
+
+/*___ LEFT SIDE __________________________________ 
+parent -> child */
+.col.left {
+  background-color: var(--primary-background-color);
+
+  flex-grow: 3;
+  border-radius: 0 0 0 0.5rem;
+  align-items: start;
+}
+/* COLUMN ITEMS */
+
+.col_item.left {
+  min-width: 8rem;
+}
+
+/*___________________ MIDDLE ____________________ 
+  from parent -> child */
+  .col.mid {
+    padding-right: 0.5rem;
+    background-color: var(--primary-background-color);
+    flex-grow: 2;
+    align-items: end;
+  }
+  
+  /* COLUMN ITEMS */
+  .col_item.mid {
+    width: 100%;
+    border-bottom-width: .1rem;
+    border-bottom-style: solid;
+    border-bottom-color: var(--primary-color);
+  }
+
+
+/*__________________________________ RIGHT SIDE ___ 
+  from parent -> child */
+  .col.right {
+    background-color: var(--secondary-background-color);
+    flex-grow: 1;
+    border-radius: 0 0 0.5rem 0;
+  }
+  
+  /* COLUMN ITEMS */
+  .col_item.right.header {
+    flex-grow: 1;
+    width: 100%;
+    text-align: start;
+    align-content: center;
+  }
+
+  .col_item.right.preview {
+    overflow: auto;
+    line-height: 1.5rem;
+    min-height: 8.3rem;
+    min-width: 200px;
+    width: 100%;
+    flex-grow: 4;
+    background-color: var(--shade-color);
+    margin: .7rem;
+    padding: 0 .7rem 0 .7rem;
+    border-radius: 0.5rem;
+  }
+  
+  pre {
+    color: var(--accent-color);
+  }
+
+  .col_item.right.button {
+    padding: 0 3rem 0 3rem;
+    flex-grow: 1;
+    background-color: lightgreen;
+    border-radius: 0.5rem;
+    align-content: center;
+  }
+  
+  button.download {
+    display: flex;
+    align-items: center;
+    color: var(--button-text-color);
+    background-color: var(--accent-color);
+    font-size: var(--h3-font-size);
+    cursor: pointer;
+    border: none;
+    border-radius: .3rem;
+    padding: .5rem 1.2rem;
+  }
+  
+  button.download:hover {
+    /* brighter background on mouse-over */
+    background-color: var(--accent-color-light);
+  }
+
+
+/* VV since default color was cahnged in *{}, I had to specifically change these back to their intended colors VV */
+/* Close icon */
+
+path[d="M5 20h14v-2H5zM19 9h-4V3H9v6H5l7 7z"] {
+  color: var(--button-text-color);
+}
+
+/* path[d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"] {
+  color: var(--secondary-color);
+} */
+
+/* override css for;  MUI DownloadIcon*/
+/* .MuiSvgIcon-root {
+  fill: var(--button-text-color) !important;
+  font-size: 1.27rem !important;
+  padding: 0rem .75rem 0.15rem 0rem !important;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* v___________________________OLD___________________________v */
+
+/* .rightside {
   border-radius: 0 0 .5rem 0;
   width: 30%;
   background-color: var(--secondary-background-color);
@@ -21,75 +203,31 @@
   width: 70%;
   background-color: var(--primary-background-color);
 }
+ */
 
-select {
-  background-color: transparent;
-  height: 40px;
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid;
-  border-color: var(--secondary-color);
-  color: var(--secondary-color);
-}
-.select:hover {
-  filter: brightness(150%);
-}
-
+/* 
 .container {
   overflow: auto;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   flex-grow: 1;
-}
+} */
 
-.container.preview {
-  overflow: auto;
-  line-height: 1.5rem;
-  min-height: 8.3rem;
-  min-width: 200px;
-  padding: 10px;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin: 10px;
-  background-color: var(--shade-color);
-  border-radius: 0.5rem;
-}
-
-.container.checkbox-list {
+/* .container.checkbox-list {
   padding-bottom: 1rem;
   border-bottom: 1px solid;
   column-gap: 2rem;
-}
-
+} */
+/* 
 .container.button {
   align-items: center;
   justify-content: center;
-}
+} */
 
 
-button.download {
-  background-color: var(--accent-color);
-  cursor: pointer;
-  border: none;
-  color: var(--button-text-color);
-  padding: .5rem 1.2rem;
-  padding: .5rem .8rem;
-  font-size: var(--h3-font-size);
-  display: flex;
-  align-items: center;
-  border-radius: .3rem;
-}
 
-button.download:hover {
-  /* Darker background on mouse-over */
-  background-color: var(--accent-color-light);
-}
-
-pre {
-  color: var(--accent-color);
-}
-
+/* 
 .row {
   padding: 1rem;
   display: flex;
@@ -123,35 +261,4 @@ pre {
 input[type="checkbox"] {
   accent-color: var(--accent-color-dark);
 }
-
-
-/* Close icon */
-div.stack {
-  position: absolute;
-  top: .7rem;
-  right: 1rem;
-}
-div.stack:hover {
-  filter: brightness(150%);
-}
-
-
-
-/* VV since default color was cahnged in *{}, I had to specifically change these back to their intended colors VV */
-/* Close icon */
-path[d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"] {
-  color: var(--secondary-color);
-}
-
-path[d="M5 20h14v-2H5zM19 9h-4V3H9v6H5l7 7z"] {
-  color: var(--button-text-color);
-}
-
-/* override css for;  MUI DownloadIcon*/
-/* .MuiSvgIcon-root {
-  fill: var(--button-text-color) !important;
-  font-size: 1.27rem !important;
-  padding: 0rem .75rem 0.15rem 0rem !important;
-} */
-
-
+ */
