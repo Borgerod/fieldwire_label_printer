@@ -24,4 +24,7 @@ yarn-error.log*
 api_token.py
 _backups/
 _env/
+env
+TEMPDISABLED_env
 test.py
+check_version.bat
