@@ -3,37 +3,61 @@
 
 
 
-## Usage
+## Quick Install & Usage:
 
-### Backend:
-    NOTE: env/ should be created in cd download_component_labels/
+#### [On Windows]
+    To install: double-click install.bat
+    To run app: double-click run.bat
 
-    [ON WINDOWS]
+#### [On MacOS/Linux]
+    To install: double-click install.sh
+    To run app: double-click run.sh
+
+## Manual Install & Usage
+NOTE: env/ should be created in cd download_component_labels/
+
+### [ON WINDOWS]:
+#### To install: 
     cd download_component_labels
     python -m venv env
     .\env\Scripts\activate
     pip install -r requirements.txt
+    npm install 
+    
+#### To run Backend: (in the same terminal)
     python -m uvicorn src.backend.app:app --reload
 
-    [ON MAC/LINUX]
+#### To run Frontend: (open new terminal)
+    cd download_component_labels
+    .\env\Scripts\activate
+    npm start
+
+### [ON MAC/LINUX]
+#### To install: 
     cd download_component_labels 
     python -m venv env
     source env/bin/activate
     pip install -r requirements.txt
+    npm install 
+    
+#### To run Backend: (in the same terminal)
+    cd download_component_labels
+    .\env\Scripts\activate
     python -m uvicorn src.backend.app:app --reload
     
-    
-### Frontend: 
+#### To run Frontend: (open new terminal)
     cd download_component_labels
-    npm install 
+    source env/bin/activate
     npm start
 
-## structure
+
+## File Structure
     src/
     |   
     ├── backend/
     |    ├── __pycache__/
     |    ├── __init__.py
+    |    ├── api_token.py    
     |    └── app.py
     |    
     ├── components/
@@ -46,8 +70,11 @@
     │
     ├── css/
     │   ├── App.css
+    │   ├── checkbox.css
+    │   ├── field_selection.css
     │   ├── font.css
-    │   └── index.css
+    │   ├── index.css
+    │   └── theme.css
     │
     ├── utils/
     │   ├── api.js
@@ -55,15 +82,16 @@
     │   └── sortUtils.js
     │
     ├── App.js
-    ├── App.css
     └── index.js
 
 
 ## Previews
-upon opening
-![Screenshot 2024-06-01 145234](https://github.com/Borgerod/fieldwire_label_printer/assets/97392841/51fbff12-29b6-4eef-87a6-236bea8ed00c)
-upon usage
-![Screenshot 2024-06-01 145221](https://github.com/Borgerod/fieldwire_label_printer/assets/97392841/2e393f26-a67c-440f-a5d9-1f164d2ae6ef)
+Not in use:
+![Screenshot 2024-06-05 140702](https://github.com/Borgerod/fieldwire_label_printer/assets/97392841/1782a308-1b0a-4bba-8393-4bc5dfd09ee2)
+
+In use:
+![Screenshot 2024-06-05 140832](https://github.com/Borgerod/fieldwire_label_printer/assets/97392841/76f04884-256d-4374-a180-790d8c451410)
+
 
 ### Alternativ Figma designs
 
