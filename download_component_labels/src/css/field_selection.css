@@ -3,8 +3,6 @@
     flex-direction: row;
     align-items: flex-end;
     justify-content: flex-start;
-    /* vv comment this if select fields align to right vv */
-    /* justify-content: flex-end; */
   }
 
   .col_item.mid.checklist {
