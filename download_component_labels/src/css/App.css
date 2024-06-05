@@ -30,10 +30,14 @@ select {
   border: none;
 }
 
+select:focus {
+  box-shadow: none;
+  border: 0;
+}
+
 select:hover {
   filter: brightness(150%);
 }
-/* TODO: remove border after select (OR make custom dropdown) */
 
 .close_icon{
   position: absolute;
