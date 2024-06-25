@@ -40,9 +40,6 @@ fi
 # Install Python packages from requirements.txt
 pip install -r requirements.txt
 
-# Deactivate the virtual environment
-deactivate
-
 # Install Node.js packages
 npm install
 

@@ -4,7 +4,7 @@
 
 
 ## Quick Install & Usage:
-
+PLEASE NOTE; The installer file for macOS/Linux is not tested and might not me working properly (I don't have the OSes available) 
 #### [On Windows]
     To install: double-click install.bat
     To run app: double-click run.bat
